@@ -4,9 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="src/styles/styles.css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+    <title>Multimetric Converter</title>
 </head>
 <body>
-    LOL
+    <div class="top-part"></div>
+    <div class="app">
+        <div class="app-navigation">
+            <div class="app-options">
+                <div class="app-option" onclick="setMode('programmer');">
+                    <img src="src/icons/programmer_icon.png" alt="programmer_icon.png">
+                    <span class="app-option-text">Programmer</span>
+                </div>
+                <div class="app-option" onclick="setMode('temperature');">
+                    <img src="src/icons/temperature_icon.png" alt="temperature_icon.png" height="20">
+                    <span class="app-option-text">Temperature</span>
+                </div>
+                <div class="app-option" onclick="setMode('weight');">
+                    <img src="src/icons/weight_icon.png" alt="weight_icon.png">
+                    <span class="app-option-text">Weight</span>
+                </div>
+                <div class="app-option" onclick="setMode('length');">
+                    <img src="src/icons/length_icon.png" alt="length_icon.png">
+                    <span class="app-option-text">Length</span>
+                </div>
+            </div>
+            <div class="navigation-sep"></div>
+            <div class="help-support">
+                <div class="help-text" onclick="feedbackButton();">Feedback</div>
+                <div class="help-text" onclick="languageButton();">Language</div>
+                <div class="help-text" onclick="setDefaultButton();">Set Default</div>
+                <div class="help-text" onclick="helpButton();">Help</div>
+                <div class="help-text" onclick="aboutButton();">About</div>
+            </div>
+        </div>
+        <div class="main-app">
+            <div class="app-display"></div>
+            <div class="app-buttons"></div>
+        </div>
+        <div class="app-config">
+            <div class="config-title">Configuration</div>
+            <div class="config-body">
+                <div class="config-color">
+                    <div class="color-title">Color</div>
+                    <div class="color-type">Main</div>
+                    <div class="color-type">Accent</div>
+                </div>
+                <div class="dark-mode">
+                    <span class="dark-mode-text">Dark Mode</span>
+                    <input type="checkbox" name="" onclick="setDarkMode();">
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="src/app.js"></script>
 </html>
