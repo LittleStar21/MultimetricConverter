@@ -97,17 +97,120 @@ img {
   flex-grow: 3;
   border-left: 1px solid #c4c4c4;
   border-right: 1px solid #c4c4c4;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
 .app-display {
-  background-color: gray;
 }
 
 .app-buttons {
-  background-color: red;
+}
+
+.programmer-input {
+  background-color: #dfefff;
+  border-radius: 10px;
+  min-height: 42vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.programmer-input-number {
+  position: absolute;
+  top: 40%;
+  font-family: Open Sans;
+  font-size: 96px;
+  font-weight: 600;
+  padding-right: 20px;
+  align-self: flex-end;
+}
+
+.select-box {
+  display: flex;
+  width: 180px;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.select-box .options-container {
+  color: #1a1a1a;
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+  /* border-radius: 8px; */
+  overflow: hidden;
+  order: 1;
+}
+
+.selected {
+  font-size: 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+  position: relative;
+  order: 0;
+}
+
+.selected::after {
+  content: "";
+  background: url("../icons/arrown_down.svg");
+  filter: invert(75%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100%;
+  width: 32px;
+  right: -30px;
+  top: 10px;
+  transition: all 0.4s;
+}
+
+.select-box .options-container.active {
+  max-height: 180px;
+  opacity: 1;
+  overflow-y: scroll;
+}
+
+.select-box .options-container.active + .selected::after {
+  transform: rotateX(180deg);
+  top: -8px;
+}
+
+.select-box .options-container::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 0 8px 8px 0;
+}
+
+.select-box .options-container::-webkit-scrollbar-thumb {
+  border-radius: 0 8px 8px 0;
+}
+
+.select-box .option,
+.selected {
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+.select-box .option:hover {
+  background: #ffffff;
+}
+
+.select-box label {
+  cursor: pointer;
+}
+
+label {
+  font-size: 18px;
+}
+
+.select-box .option .radio {
+  display: none;
 }
 
 .app-config {
