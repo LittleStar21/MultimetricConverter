@@ -100,28 +100,35 @@ img {
   /* display: flex;
   flex-direction: column;
   justify-content: space-evenly; */
-  padding-top: 10px;
-  padding-left: 10px;
+  padding-top: 20px;
 }
 
 .app-display {
+  display: flex;
+  justify-content: space-around;
 }
 
 .app-buttons {
+}
+
+.programmer-display {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-basis: 95%;
+  gap: 2%;
 }
 
 .programmer-input {
   background-color: #dfefff;
   border-radius: 10px;
   min-height: 42vh;
-  width: 50%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .programmer-input-number {
-  position: absolute;
-  top: 40%;
   font-family: Open Sans;
   font-size: 96px;
   font-weight: 600;
@@ -211,6 +218,37 @@ label {
 
 .select-box .option .radio {
   display: none;
+}
+
+.programmer-output-container {
+  background-color: #dfefff;
+  border-radius: 10px;
+  min-height: 42vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.programmer-output {
+}
+
+.programmer-output-title {
+  font-size: 18px;
+  font-weight: 400;
+  min-height: 74px;
+}
+
+.programmer-output-value {
+  font-family: Open Sans;
+  font-weight: 600;
+  font-size: 36px;
+  float: right;
+}
+
+.border-bot {
+  border-bottom: 1px solid #c4c4c4;
 }
 
 .app-config {
