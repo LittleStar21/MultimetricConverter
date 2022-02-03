@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Lato", sans-serif;
+  overflow: hidden;
 }
 
 .top-part {
@@ -106,9 +107,206 @@ img {
 .app-display {
   display: flex;
   justify-content: space-around;
+  height: 42vh;
 }
 
 .app-buttons {
+  display: flex;
+  margin: 20px 30px;
+}
+
+.hex-letter-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 15vw;
+  height: 38vh;
+  gap: 1%;
+  justify-content: space-evenly;
+  margin-right: 20px;
+}
+
+.hex-letter-container > button {
+  margin: 5px auto;
+  font-size: 22px;
+  font-weight: 600;
+  flex-basis: 46%;
+  color: #1a1a1a;
+  background-color: #90c8c1;
+  border-radius: 5px;
+  border: none;
+}
+
+.hex-letter-container > button:hover {
+  cursor: pointer;
+  background-color: #a5dad3;
+  transition: all 0.4s ease;
+}
+
+.hex-letter-container > button:active {
+  background-color: #a5dad3;
+  border: 1px solid rgba(26, 26, 26, 0.25);
+  box-sizing: border-box;
+  box-shadow: 2px 2px 7px 1px rgba(26, 26, 26, 0.25);
+}
+
+.hex-A {
+  order: 1;
+}
+
+.hex-B {
+  order: 3;
+}
+
+.hex-C {
+  order: 5;
+}
+
+.hex-D {
+  order: 2;
+}
+
+.hex-E {
+  order: 4;
+}
+
+.hex-F {
+  order: 6;
+}
+
+.num-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 20vw;
+  gap: 3%;
+}
+
+.num-container > button {
+  flex-basis: 30%;
+  background-color: #dfefff;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 5px;
+  font-size: 22px;
+  font-family: Open Sans;
+  font-weight: 600;
+}
+
+.num-container > button:hover {
+  cursor: pointer;
+  background-color: #c7e4ff;
+  transition: all 0.4s ease;
+}
+
+.num-container > button:active {
+  background-color: #c7e4ff;
+  border: 1.5px solid rgba(26, 26, 26, 0.1);
+  box-sizing: border-box;
+  box-shadow: 2px 2px 7px 1px rgba(26, 26, 26, 0.25);
+}
+
+.num-zero {
+  order: 11;
+}
+
+.num-one {
+  order: 7;
+}
+
+.num-two {
+  order: 8;
+}
+
+.num-three {
+  order: 9;
+}
+
+.num-four {
+  order: 4;
+}
+
+.num-five {
+  order: 5;
+}
+
+.num-six {
+  order: 6;
+}
+
+.num-seven {
+  order: 1;
+}
+
+.num-eight {
+  order: 2;
+}
+
+.num-nine {
+  order: 3;
+}
+
+.num-dot {
+  order: 12;
+}
+
+.num-plus-minus {
+  order: 10;
+}
+
+.programmer-operation-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 12vw;
+  gap: 3%;
+  justify-content: space-evenly;
+}
+
+.programmer-operation-container > button {
+  flex-basis: 47%;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 5px;
+  font-size: 22px;
+  font-family: Open Sans;
+  font-weight: 600;
+}
+
+.programmer-operation-container > button:hover {
+  cursor: pointer;
+}
+
+.op {
+  background-color: #dfefff;
+}
+
+.op:hover {
+  cursor: pointer;
+  background-color: #c7e4ff;
+  transition: all 0.4s ease;
+}
+
+.op:active {
+  background-color: #c7e4ff;
+  border: 1.5px solid rgba(26, 26, 26, 0.1);
+  box-sizing: border-box;
+  box-shadow: 2px 2px 7px 1px rgba(26, 26, 26, 0.25);
+}
+
+.programmer-equal {
+  /* order: -1; */
+  background-color: #90c8c1;
+}
+
+.programmer-equal:hover {
+  cursor: pointer;
+  background-color: #a5dad3;
+}
+
+.programmer-equal:active {
+  background-color: #a5dad3;
+  border: 1.5px solid rgba(26, 26, 26, 0.25);
+  box-sizing: border-box;
+  box-shadow: 2px 2px 7px 1px rgba(26, 26, 26, 0.25);
+  border-radius: 5px;
 }
 
 .programmer-display {
@@ -121,7 +319,6 @@ img {
 .programmer-input {
   background-color: #dfefff;
   border-radius: 10px;
-  min-height: 42vh;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -179,9 +376,9 @@ img {
 }
 
 .select-box .options-container.active {
-  max-height: 180px;
+  max-height: 200px;
   opacity: 1;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .select-box .options-container.active + .selected::after {
@@ -206,6 +403,7 @@ img {
 
 .select-box .option:hover {
   background: #ffffff;
+  transition: all 0.4s ease;
 }
 
 .select-box label {
@@ -223,7 +421,6 @@ label {
 .programmer-output-container {
   background-color: #dfefff;
   border-radius: 10px;
-  min-height: 42vh;
   width: 100%;
   display: flex;
   flex-direction: column;

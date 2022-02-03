@@ -1,3 +1,4 @@
+// Programmer input selector
 const selected = document.querySelector(".selected");
 const optionsContainer = document.querySelector(".options-container");
 
@@ -15,15 +16,53 @@ optionsList.forEach(option => {
   });
 });
 
+ // Application modes
+const PROGRAMMER = 0;
+const TEMPERATURE = 1;
+const WEIGHT = 2;
+const LENGTH = 3;
 
-let applicationMode = "programmer";
-let isDarkMode = false;
+let applicationMode = PROGRAMMER;
 
 const setMode = (mode) => {
   applicationMode = mode;
-  console.log(applicationMode);
+
+  switch (mode) {
+    case PROGRAMMER:
+      showProgrammerMode(true);
+      break;
+    case TEMPERATURE:
+      showProgrammerMode(false);
+      break;
+    case WEIGHT:
+      showProgrammerMode(false);
+      break;
+    case LENGTH:
+      showProgrammerMode(false);
+      break;
+    default:
+  }
 };
 
+const showProgrammerMode = (isProgrammer) => {
+  const programmerDisplay = document.querySelector(".programmer-display");
+  const hexLetters = document.querySelector(".hex-letter-container");
+  const programmerOperations = document.querySelector(".programmer-operation-container");
+      
+  if (isProgrammer) {
+    programmerDisplay.style.display = "flex";
+    hexLetters.style.display = "flex";
+    programmerOperations.style.display = "flex";
+  } else {
+      programmerDisplay.style.display = "none";
+      hexLetters.style.display = "none";
+      programmerOperations.style.display = "none";
+  }
+};
+
+
+// Dark mode
+let isDarkMode = false;
 const setDarkMode = () => {
   isDarkMode = !isDarkMode;
   console.log("Darkmode:", isDarkMode);
