@@ -17,7 +17,7 @@ body {
 
 .top-part {
   background-color: #6b8fb9;
-  min-height: 80px;
+  height: 7vh;
 }
 
 .app {
@@ -28,7 +28,8 @@ body {
 
 .app-navigation {
   flex-grow: 0.4;
-  font-size: 22px;
+  /* font-size: 22px; */
+  font-size: 1.15vw;
 }
 
 .app-options {
@@ -319,7 +320,7 @@ img {
 .programmer-input {
   background-color: #dfefff;
   border-radius: 10px;
-  width: 100%;
+  flex-basis: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -327,7 +328,7 @@ img {
 
 .programmer-input-number {
   font-family: Open Sans;
-  font-size: 96px;
+  font-size: 5vw;
   font-weight: 600;
   padding-right: 20px;
   align-self: flex-end;
@@ -352,7 +353,7 @@ img {
 }
 
 .selected {
-  font-size: 24px;
+  font-size: min(1.8vw, 24px);
   font-weight: 600;
   border-radius: 8px;
   margin-bottom: 8px;
@@ -370,7 +371,7 @@ img {
   position: absolute;
   height: 100%;
   width: 32px;
-  right: -30px;
+  right: min(-30px, -1.5vw);
   top: 10px;
   transition: all 0.4s;
 }
@@ -411,7 +412,7 @@ img {
 }
 
 label {
-  font-size: 18px;
+  font-size: 1vw;
 }
 
 .select-box .option .radio {
@@ -421,26 +422,23 @@ label {
 .programmer-output-container {
   background-color: #dfefff;
   border-radius: 10px;
-  width: 100%;
+  flex-basis: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 10px 20px;
 }
 
-.programmer-output {
-}
-
 .programmer-output-title {
-  font-size: 18px;
+  font-size: 1.1vw;
   font-weight: 400;
-  min-height: 74px;
+  height: 7vh;
 }
 
 .programmer-output-value {
   font-family: Open Sans;
   font-weight: 600;
-  font-size: 36px;
+  font-size: 2vw;
   float: right;
 }
 
@@ -452,7 +450,7 @@ label {
   flex-grow: 0.5;
   display: flex;
   flex-flow: column nowrap;
-  font-size: 22px;
+  font-size: min(1.4vw, 22px);
   font-weight: 600;
 }
 
