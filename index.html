@@ -1,140 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/styles/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
     <title>Multimetric Converter</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="top-part"></div>
     <div class="app">
-        <div class="app-navigation">
-            <div class="app-options">
-                <div class="app-option" onclick="setMode(0);">
-                    <img src="src/icons/programmer_icon.png" alt="programmer_icon.png">
-                    <span class="app-option-text">Programmer</span>
-                </div>
-                <div class="app-option" onclick="setMode(1);">
-                    <img src="src/icons/temperature_icon.png" alt="temperature_icon.png" height="20">
-                    <span class="app-option-text">Temperature</span>
-                </div>
-                <div class="app-option" onclick="setMode(2);">
-                    <img src="src/icons/weight_icon.png" alt="weight_icon.png">
-                    <span class="app-option-text">Weight</span>
-                </div>
-                <div class="app-option" onclick="setMode(3);">
-                    <img src="src/icons/length_icon.png" alt="length_icon.png">
-                    <span class="app-option-text">Length</span>
-                </div>
-            </div>
-            <div class="navigation-sep"></div>
-            <div class="help-support">
-                <div class="help-text" onclick="feedbackButton();">Feedback</div>
-                <div class="help-text" onclick="languageButton();">Language</div>
-                <div class="help-text" onclick="setDefaultButton();">Set Default</div>
-                <div class="help-text" onclick="helpButton();">Help</div>
-                <div class="help-text" onclick="aboutButton();">About</div>
-            </div>
+      <div class="app-navigation">
+        <div class="app-options">
+          <div class="app-option" onclick="setMode(0);">
+            <img
+              src="src/icons/programmer_icon.png"
+              alt="programmer_icon.png"
+            />
+            <span class="app-option-text">Programmer</span>
+          </div>
+          <div class="app-option" onclick="setMode(1);">
+            <img
+              src="src/icons/temperature_icon.png"
+              alt="temperature_icon.png"
+              height="20"
+            />
+            <span class="app-option-text">Temperature</span>
+          </div>
+          <div class="app-option" onclick="setMode(2);">
+            <img src="src/icons/weight_icon.png" alt="weight_icon.png" />
+            <span class="app-option-text">Weight</span>
+          </div>
+          <div class="app-option" onclick="setMode(3);">
+            <img src="src/icons/length_icon.png" alt="length_icon.png" />
+            <span class="app-option-text">Length</span>
+          </div>
         </div>
-        <div class="main-app">
-            <div class="app-display">
-                <div class="programmer-display">
-                    <div class="programmer-input">
-                        <div class="select-box">
-
-                            <div class="options-container">
-                                <div class="option">
-                                    <input type="radio" class="radio" id="hexadecimal" name="category">
-                                    <label for="hexadecimal">Hexadecimal</label>
-                                </div>
-                                <div class="option">
-                                    <input type="radio" class="radio" id="decimal" name="category">
-                                    <label for="decimal">Decimal</label>
-                                </div>
-                                <div class="option">
-                                    <input type="radio" class="radio" id="octal" name="category">
-                                    <label for="octal">Octal</label>
-                                </div>
-                                <div class="option">
-                                    <input type="radio" class="radio" id="binary" name="category">
-                                    <label for="binary">Binary</label>
-                                </div>
-                            </div>
-                            <div class="selected">Hexadecimal</div>
-
-                        </div>
-                        <div class="programmer-input-number">B2</div>
-                    </div>
-                    <div class="programmer-output-container">
-                        <div class="programmer-output border-bot">
-                            <div class="programmer-output-title">Decimal</div>
-                            <div class="programmer-output-value">178</div>
-                        </div>
-                        <div class="programmer-output border-bot">
-                            <div class="programmer-output-title">Octal</div>
-                            <div class="programmer-output-value">262</div>
-                        </div>
-                        <div class="programmer-output">
-                            <div class="programmer-output-title">Binary</div>
-                            <div class="programmer-output-value">1011 0010</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="app-buttons">
-                <div class="hex-letter-container">
-                    <button class="hex-A">A</button>
-                    <button class="hex-B">B</button>
-                    <button class="hex-C">C</button>
-                    <button class="hex-D">D</button>
-                    <button class="hex-E">E</button>
-                    <button class="hex-F">F</button>
-                </div>
-                <div class="num-container">
-                    <button class="num-zero">0</button>
-                    <button class="num-one">1</button>
-                    <button class="num-two">2</button>
-                    <button class="num-three">3</button>
-                    <button class="num-four">4</button>
-                    <button class="num-five">5</button>
-                    <button class="num-six">6</button>
-                    <button class="num-seven">7</button>
-                    <button class="num-eight">8</button>
-                    <button class="num-nine">9</button>
-                    <button class="num-dot">.</button>
-                    <button class="num-plus-minus">±</button>
-                </div>
-                <div class="programmer-operation-container">
-                    <button class="op mult">×</button>
-                    <button class="op del">LOL</button>
-                    <button class="op min">-</button>
-                    <button class="op div">÷</button>
-                    <button class="op plus">+</button>
-                    <button class="op percentage">%</button>
-                    <button class="op ce">CE</button>
-                    <button class="programmer-equal">=</button>
-                </div>
-            </div>
+        <div class="navigation-sep"></div>
+        <div class="help-support">
+          <div class="help-text" onclick="feedbackButton();">Feedback</div>
+          <div class="help-text" onclick="languageButton();">Language</div>
+          <div class="help-text" onclick="setDefaultButton();">Set Default</div>
+          <div class="help-text" onclick="helpButton();">Help</div>
+          <div class="help-text" onclick="aboutButton();">About</div>
         </div>
-        <div class="app-config">
-            <div class="config-title">Configuration</div>
-            <div class="config-body">
-                <div class="config-color">
-                    <div class="color-title">Color</div>
-                    <div class="color-type">Main</div>
-                    <div class="color-type">Accent</div>
+      </div>
+      <div class="main-app">
+        <div class="app-display">
+          <div class="programmer-display">
+            <div class="programmer-input">
+              <div class="select-box">
+                <div class="options-container">
+                  <div class="option">
+                    <input
+                      type="radio"
+                      class="radio"
+                      id="hexadecimal"
+                      name="category"
+                    />
+                    <label for="hexadecimal">Hexadecimal</label>
+                  </div>
+                  <div class="option">
+                    <input
+                      type="radio"
+                      class="radio"
+                      id="decimal"
+                      name="category"
+                    />
+                    <label for="decimal">Decimal</label>
+                  </div>
+                  <div class="option">
+                    <input
+                      type="radio"
+                      class="radio"
+                      id="octal"
+                      name="category"
+                    />
+                    <label for="octal">Octal</label>
+                  </div>
+                  <div class="option">
+                    <input
+                      type="radio"
+                      class="radio"
+                      id="binary"
+                      name="category"
+                    />
+                    <label for="binary">Binary</label>
+                  </div>
                 </div>
-                <div class="dark-mode">
-                    <span class="dark-mode-text">Dark Mode</span>
-                    <input type="checkbox" name="" onclick="setDarkMode();">
-                </div>
+                <div class="selected">Hexadecimal</div>
+              </div>
+              <div class="programmer-input-number">B2</div>
             </div>
+            <div class="programmer-output-container">
+              <div class="programmer-output border-bot">
+                <div class="programmer-output-title">Decimal</div>
+                <div class="programmer-output-value">178</div>
+              </div>
+              <div class="programmer-output border-bot">
+                <div class="programmer-output-title">Octal</div>
+                <div class="programmer-output-value">262</div>
+              </div>
+              <div class="programmer-output">
+                <div class="programmer-output-title">Binary</div>
+                <div class="programmer-output-value">1011 0010</div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="app-buttons">
+          <div class="hex-letter-container">
+            <button class="hex-A">A</button>
+            <button class="hex-B">B</button>
+            <button class="hex-C">C</button>
+            <button class="hex-D">D</button>
+            <button class="hex-E">E</button>
+            <button class="hex-F">F</button>
+          </div>
+          <div class="num-container">
+            <button class="num-zero">0</button>
+            <button class="num-one">1</button>
+            <button class="num-two">2</button>
+            <button class="num-three">3</button>
+            <button class="num-four">4</button>
+            <button class="num-five">5</button>
+            <button class="num-six">6</button>
+            <button class="num-seven">7</button>
+            <button class="num-eight">8</button>
+            <button class="num-nine">9</button>
+            <button class="num-dot">.</button>
+            <button class="num-plus-minus">±</button>
+          </div>
+          <div class="programmer-operation-container">
+            <button class="op mult">×</button>
+            <button class="op del">LOL</button>
+            <button class="op min">-</button>
+            <button class="op div">÷</button>
+            <button class="op plus">+</button>
+            <button class="op percentage">%</button>
+            <button class="op ce">CE</button>
+            <button class="programmer-equal">=</button>
+          </div>
+        </div>
+      </div>
+      <div class="app-config">
+        <div class="config-title">Configuration</div>
+        <div class="config-body">
+          <div class="config-color">
+            <div class="color-title">Color</div>
+            <div class="color-type">Main</div>
+            <div class="color-type">Accent</div>
+          </div>
+          <div class="dark-mode">
+            <span class="dark-mode-text">Dark Mode</span>
+            <input type="checkbox" name="" onclick="setDarkMode();" />
+          </div>
+        </div>
+      </div>
     </div>
-</body>
-<script src="src/app.js"></script>
-<script src="src/programmer.js"></script>
+  </body>
+  <script src="src/app.js"></script>
 </html>
