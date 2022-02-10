@@ -393,7 +393,16 @@ const setDarkMode = () => {
 };
 
 const feedbackButton = () => {
-  console.log("Feedback");
+  const popUp = document.querySelector(".pop-up");
+  const feedback = document.querySelector(".feedback");
+  popUp.style.display = "flex";
+  feedback.style.display = "block";
+
+  document.querySelector(".pop-up").addEventListener("click", (e) => {
+    if (e.target === e.currentTarget) {
+      removePopUp();
+    }
+  });
 };
 
 const languageButton = () => {
@@ -405,11 +414,41 @@ const setDefaultButton = () => {
 };
 
 const helpButton = () => {
-  console.log("Help");
-  console.log(getFahrenheit(32));
+  const popUp = document.querySelector(".pop-up");
+  const help = document.querySelector(".help");
+  popUp.style.display = "flex";
+  help.style.display = "block";
+
+  document.querySelector(".pop-up").addEventListener("click", (e) => {
+    if (e.target === e.currentTarget) {
+      removePopUp();
+    }
+  });
 };
 
 const aboutButton = () => {
   const popUp = document.querySelector(".pop-up");
-  popUp.style.visibility = "visible";
+  const about = document.querySelector(".about");
+  popUp.style.display = "flex";
+  about.style.display = "block";
+
+  document.querySelector(".pop-up").addEventListener("click", (e) => {
+    if (e.target !== e.currentTarget) {
+      // console.log("Child clicked");
+    } else {
+      // console.log("Parent clicked");
+      removePopUp();
+    }
+  });
+};
+
+const removePopUp = () => {
+  const popUp = document.querySelector(".pop-up");
+  const about = document.querySelector(".about");
+  const help = document.querySelector(".help");
+  const feedback = document.querySelector(".feedback");
+  popUp.style.display = "none";
+  about.style.display = "none";
+  help.style.display = "none";
+  feedback.style.display = "none";
 };
