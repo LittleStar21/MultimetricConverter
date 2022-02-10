@@ -7,6 +7,6 @@
   },
   "scripts": {
     "lint": "eslint --quiet \"src/**/*.{css,js}\"",
-    "format": "prettier --write \"src/**/*.{css,js}\""
+    "format": "prettier --write \"src/**/*.{css,js}\" index.html"
   }
 }

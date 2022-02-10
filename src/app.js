@@ -13,7 +13,9 @@ const LENGTH_TYPES = ["Inch", "Kilometer", "Meter", "Centimeter"];
 window.onload = () => {
   const programmerDisplay = document.querySelector(".programmer-display");
   const optionsContainer = document.querySelector(".options-container");
-  const programmerOutputContainer = document.querySelector(".programmer-output-container");
+  const programmerOutputContainer = document.querySelector(
+    ".programmer-output-container"
+  );
   const selected = document.querySelector(".selected");
   const inputNumber = document.querySelector(".programmer-input-number");
 
@@ -41,7 +43,6 @@ window.onload = () => {
 
   resetInputSelector();
 
-  // PROGRAMMER_TYPES.slice(0).splice(1)
   for (let i = 1; i < PROGRAMMER_TYPES.length; i++) {
     const newChild = document.createElement("div");
     newChild.className = "programmer-output";
@@ -109,21 +110,38 @@ const setMode = (mode) => {
   if (applicationMode === mode) return;
   applicationMode = mode;
 
+  const hexLetterContainer = document.querySelector(".hex-letter-container");
+  const programmerOperation = document.querySelector(
+    ".programmer-operation-container"
+  );
+  const otherOperationContainer = document.querySelector(
+    ".operation-container"
+  );
+
   switch (mode) {
     case PROGRAMMER:
-      showProgrammerMode(true);
+      showProgrammerMode();
+      hexLetterContainer.style.display = "flex";
+      programmerOperation.style.display = "flex";
+      otherOperationContainer.style.display = "none";
       break;
     case TEMPERATURE:
-      showTemperatureMode(true);
+      showTemperatureMode();
+      hexLetterContainer.style.display = "none";
+      programmerOperation.style.display = "none";
+      otherOperationContainer.style.display = "grid";
       break;
     case LENGTH:
-      showLengthMode(true);
+      showLengthMode();
+      hexLetterContainer.style.display = "none";
+      programmerOperation.style.display = "none";
+      otherOperationContainer.style.display = "grid";
       break;
     default:
   }
 };
 
-const showProgrammerMode = (isProgrammer) => {
+const showProgrammerMode = () => {
   const programmerDisplay = document.querySelector(".programmer-display");
   const optionsContainer = document.querySelector("options-container");
   const selected = document.querySelector(".selected");
@@ -141,7 +159,7 @@ const showProgrammerMode = (isProgrammer) => {
   setNewOutputContainer(PROGRAMMER_TYPES.slice(0).splice(1));
 };
 
-const showTemperatureMode = (isTemperature) => {
+const showTemperatureMode = () => {
   const temperatureDisplay = document.querySelector(".programmer-display");
   const optionsContainer = document.querySelector(".options-container");
   const selected = document.querySelector(".selected");
@@ -158,7 +176,7 @@ const showTemperatureMode = (isTemperature) => {
   setNewOutputContainer(TEMPERATURE_TYPES.slice(0).splice(1));
 };
 
-const showLengthMode = (isLength) => {
+const showLengthMode = () => {
   const selected = document.querySelector(".selected");
   selected.innerHTML = "Inch";
 

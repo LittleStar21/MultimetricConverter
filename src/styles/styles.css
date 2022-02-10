@@ -119,7 +119,6 @@ img {
 }
 
 .hex-letter-container {
-  /* display: none; */
   display: flex;
   flex-flow: row wrap;
   width: 15vw;
@@ -209,6 +208,12 @@ img {
   box-shadow: 2px 2px 7px 1px rgba(26, 26, 26, 0.25);
 }
 
+.del > img {
+  /* display: block; */
+  /* margin-right: 20px; */
+  /* margin-top: 5px; */
+}
+
 .num-zero {
   order: 11;
 }
@@ -267,6 +272,10 @@ img {
 
 .programmer-operation-container > button {
   flex-basis: 47%;
+}
+
+.programmer-operation-container > button,
+.operation-container > button {
   color: #1a1a1a;
   border: none;
   border-radius: 5px;
@@ -275,43 +284,90 @@ img {
   font-weight: 600;
 }
 
-.programmer-operation-container > button:hover {
+.programmer-operation-container > button:hover,
+.operation-container > button:hover {
   cursor: pointer;
 }
 
-.op {
+.op,
+.other {
   background-color: #dfefff;
 }
 
-.op:hover {
+.op:hover,
+.other.hover {
   cursor: pointer;
   background-color: #c7e4ff;
   transition: all 0.4s ease;
 }
 
-.op:active {
+.op:active,
+.other:active {
   background-color: #c7e4ff;
   border: 1.5px solid rgba(26, 26, 26, 0.1);
   box-sizing: border-box;
   box-shadow: 2px 2px 7px 1px rgba(26, 26, 26, 0.25);
 }
 
-.programmer-equal {
+.programmer-equal,
+.other-equal {
   /* order: -1; */
   background-color: #90c8c1;
 }
 
-.programmer-equal:hover {
+.programmer-equal:hover,
+.other-equal:hover {
   cursor: pointer;
   background-color: #a5dad3;
 }
 
-.programmer-equal:active {
+.programmer-equal:active,
+.other-equal:active {
   background-color: #a5dad3;
   border: 1.5px solid rgba(26, 26, 26, 0.25);
   box-sizing: border-box;
   box-shadow: 2px 2px 7px 1px rgba(26, 26, 26, 0.25);
   border-radius: 5px;
+}
+
+.operation-container {
+  width: 12vw;
+  display: none;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "del del"
+    "min useless"
+    "plus equal"
+    "ce equal";
+}
+
+.other.del {
+  grid-area: del;
+}
+
+.other.min {
+  grid-area: min;
+}
+
+.other.useless {
+  grid-area: useless;
+}
+
+.other.plus {
+  grid-area: plus;
+}
+
+.other.ce {
+  grid-area: ce;
+}
+
+.other-equal {
+  grid-area: equal;
+}
+
+.operation-container > button {
+  border: 0;
 }
 
 .programmer-display {
@@ -324,7 +380,7 @@ img {
 .programmer-input {
   background-color: #dfefff;
   border-radius: 10px;
-  flex-basis: 100%;
+  flex-basis: 50%;
   display: flex;
   justify-content: space-between;
 }
@@ -425,7 +481,7 @@ label {
 .programmer-output-container {
   background-color: #dfefff;
   border-radius: 10px;
-  flex-basis: 100%;
+  flex-basis: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
