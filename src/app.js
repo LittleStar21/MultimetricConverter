@@ -11,7 +11,6 @@ const WEIGHT_TYPES = ["Kilogram", "Gram", "Miligram", "Ton", "Ounce", "Pound"];
 const LENGTH_TYPES = ["Inch", "Kilometer", "Meter", "Centimeter"];
 
 window.onload = () => {
-  const programmerDisplay = document.querySelector(".programmer-display");
   const optionsContainer = document.querySelector(".options-container");
   const programmerOutputContainer = document.querySelector(
     ".programmer-output-container"
@@ -94,6 +93,13 @@ const resetInputSelector = () => {
           setNewOutputContainer(newArray);
           break;
         }
+        case WEIGHT: {
+          const selectedIdx = WEIGHT_TYPES.indexOf(newInputType);
+          const newArray = WEIGHT_TYPES.slice(0);
+          newArray.splice(selectedIdx, 1);
+          setNewOutputContainer(newArray);
+          break;
+        }
         case LENGTH: {
           const selectedIdx = LENGTH_TYPES.indexOf(newInputType);
           const newArray = LENGTH_TYPES.slice(0);
@@ -110,6 +116,7 @@ const setMode = (mode) => {
   if (applicationMode === mode) return;
   applicationMode = mode;
 
+  const outputContainer = document.querySelector(".programmer-output-container");
   const hexLetterContainer = document.querySelector(".hex-letter-container");
   const programmerOperation = document.querySelector(
     ".programmer-operation-container"
@@ -124,18 +131,28 @@ const setMode = (mode) => {
       hexLetterContainer.style.display = "grid";
       programmerOperation.style.display = "grid";
       otherOperationContainer.style.display = "none";
+      outputContainer.style.height = "42vh";
       break;
     case TEMPERATURE:
       showTemperatureMode();
       hexLetterContainer.style.display = "none";
       programmerOperation.style.display = "none";
       otherOperationContainer.style.display = "grid";
+      outputContainer.style.height = "42vh";
+      break;
+    case WEIGHT:
+      showWeightMode();
+      hexLetterContainer.style.display = "none";
+      programmerOperation.style.display = "none";
+      otherOperationContainer.style.display = "grid";
+      outputContainer.style.height = "60vh";
       break;
     case LENGTH:
       showLengthMode();
       hexLetterContainer.style.display = "none";
       programmerOperation.style.display = "none";
       otherOperationContainer.style.display = "grid";
+      outputContainer.style.height = "42vh";
       break;
     default:
   }
@@ -174,6 +191,21 @@ const showTemperatureMode = () => {
   tempInputNumber.innerHTML = "0";
 
   setNewOutputContainer(TEMPERATURE_TYPES.slice(0).splice(1));
+};
+
+const showWeightMode = () => {
+  const selected = document.querySelector(".selected");
+
+  selected.innerHTML = "Kilogram";
+
+  setNewOptionsContainer(WEIGHT_TYPES);
+  resetInputSelector();
+  resetInputSelector();
+
+  const tempInputNumber = document.querySelector(".programmer-input-number");
+  tempInputNumber.innerHTML = "0";
+
+  setNewOutputContainer(WEIGHT_TYPES.slice(0).splice(1));
 };
 
 const showLengthMode = () => {

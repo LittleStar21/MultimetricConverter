@@ -289,7 +289,7 @@ img {
 }
 
 .op:hover,
-.other.hover {
+.other:hover {
   cursor: pointer;
   background-color: #c7e4ff;
   transition: all 0.4s ease;
@@ -313,6 +313,7 @@ img {
 .other-equal:hover {
   cursor: pointer;
   background-color: #a5dad3;
+  transition: all 0.4s ease;
 }
 
 .programmer-equal:active,
@@ -325,7 +326,7 @@ img {
 }
 
 .operation-container {
-  width: 12vw;
+  width: 12.2vw;
   display: none;
   grid-gap: 10px;
   grid-template-columns: repeat(2, 1fr);
@@ -374,7 +375,7 @@ img {
 .programmer-input {
   background-color: #dfefff;
   border-radius: 10px;
-  flex-basis: 50%;
+  flex-basis: 55%;
   display: flex;
   justify-content: space-between;
 }
@@ -432,7 +433,7 @@ img {
 .select-box .options-container.active {
   max-height: 200px;
   opacity: 1;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
 }
 
 .select-box .options-container.active + .selected::after {
@@ -442,10 +443,12 @@ img {
 
 .select-box .options-container::-webkit-scrollbar {
   width: 8px;
+  background: #c4c4c4;
   border-radius: 0 8px 8px 0;
 }
 
 .select-box .options-container::-webkit-scrollbar-thumb {
+  background-color: black;
   border-radius: 0 8px 8px 0;
 }
 
@@ -475,7 +478,7 @@ label {
 .programmer-output-container {
   background-color: #dfefff;
   border-radius: 10px;
-  flex-basis: 50%;
+  flex-basis: 45%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
