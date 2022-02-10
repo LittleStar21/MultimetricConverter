@@ -121,8 +121,8 @@ const setMode = (mode) => {
   switch (mode) {
     case PROGRAMMER:
       showProgrammerMode();
-      hexLetterContainer.style.display = "flex";
-      programmerOperation.style.display = "flex";
+      hexLetterContainer.style.display = "grid";
+      programmerOperation.style.display = "grid";
       otherOperationContainer.style.display = "none";
       break;
     case TEMPERATURE:

@@ -115,24 +115,25 @@ img {
 
 .app-buttons {
   display: flex;
+  gap: 1%;
   margin: 20px 30px;
 }
 
 .hex-letter-container {
-  display: flex;
-  flex-flow: row wrap;
+  /* margin-right: 20px; */
   width: 15vw;
-  height: 38vh, 400px;
-  gap: 1%;
-  /* justify-content: space-between; */
-  margin-right: 20px;
+  display: grid;
+  grid-gap: 18px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "A D"
+    "B E"
+    "C F";
 }
 
 .hex-letter-container > button {
-  margin: 5px auto;
   font-size: 22px;
   font-weight: 600;
-  flex-basis: 46%;
   color: #1a1a1a;
   background-color: #90c8c1;
   border-radius: 5px;
@@ -153,39 +154,38 @@ img {
 }
 
 .hex-A {
-  order: 1;
+  grid-area: A;
 }
 
 .hex-B {
-  order: 3;
+  grid-area: B;
 }
 
 .hex-C {
-  order: 5;
+  grid-area: C;
 }
 
 .hex-D {
-  order: 2;
+  grid-area: D;
 }
 
 .hex-E {
-  order: 4;
+  grid-area: E;
 }
 
 .hex-F {
-  order: 6;
+  grid-area: F;
 }
 
 .num-container {
-  display: flex;
-  flex-flow: row wrap;
   height: 38vh;
   width: 20vw;
-  gap: 3%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, auto);
 }
 
 .num-container > button {
-  flex-basis: 30%;
   background-color: #dfefff;
   color: #1a1a1a;
   border: none;
@@ -209,9 +209,8 @@ img {
 }
 
 .del > img {
-  /* display: block; */
-  /* margin-right: 20px; */
-  /* margin-top: 5px; */
+  display: block;
+  margin: auto;
 }
 
 .num-zero {
@@ -263,15 +262,10 @@ img {
 }
 
 .programmer-operation-container {
-  display: flex;
-  flex-flow: row wrap;
   width: 12vw;
-  gap: 3%;
-  justify-content: space-evenly;
-}
-
-.programmer-operation-container > button {
-  flex-basis: 47%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, auto);
 }
 
 .programmer-operation-container > button,
