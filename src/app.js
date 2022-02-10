@@ -1,7 +1,3 @@
-window.onload = () => {
-  resetInputSelector();
-};
-
 const PROGRAMMER = 0;
 const TEMPERATURE = 1;
 const WEIGHT = 2;
@@ -11,8 +7,60 @@ let applicationMode = PROGRAMMER;
 
 const PROGRAMMER_TYPES = ["Hexadecimal", "Decimal", "Octal", "Binary"];
 const TEMPERATURE_TYPES = ["Celcius", "Fahrenheit", "Kelvin", "Reamur"];
-// const WEIGHT_TYPES = ["Kilogram", "Gram", ...];
+const WEIGHT_TYPES = ["Kilogram", "Gram", "Miligram", "Ton", "Ounce", "Pound"];
 const LENGTH_TYPES = ["Inch", "Kilometer", "Meter", "Centimeter"];
+
+window.onload = () => {
+  const programmerDisplay = document.querySelector(".programmer-display");
+  const optionsContainer = document.querySelector(".options-container");
+  const programmerOutputContainer = document.querySelector(".programmer-output-container");
+  const selected = document.querySelector(".selected");
+  const inputNumber = document.querySelector(".programmer-input-number");
+
+  selected.innerHTML = "Hexadecimal";
+  inputNumber.innerHTML = "0";
+
+  for (const programmerType of PROGRAMMER_TYPES) {
+    const newChild = document.createElement("div");
+    newChild.className = "option";
+
+    const newChildInput = document.createElement("input");
+    newChildInput.type = "radio";
+    newChildInput.className = "radio";
+    newChildInput.id = programmerType;
+    newChildInput.name = "category";
+    newChild.appendChild(newChildInput);
+
+    const newChildLabel = document.createElement("label");
+    newChildLabel.innerHTML = programmerType;
+    newChildLabel.setAttribute("for", programmerType);
+    newChild.appendChild(newChildLabel);
+
+    optionsContainer.appendChild(newChild);
+  }
+
+  resetInputSelector();
+
+  // PROGRAMMER_TYPES.slice(0).splice(1)
+  for (let i = 1; i < PROGRAMMER_TYPES.length; i++) {
+    const newChild = document.createElement("div");
+    newChild.className = "programmer-output";
+
+    if (i < PROGRAMMER_TYPES.length - 1) newChild.classList.add("border-bot");
+
+    const childTitle = document.createElement("div");
+    childTitle.className = "programmer-output-title";
+    childTitle.innerHTML = PROGRAMMER_TYPES[i];
+    newChild.appendChild(childTitle);
+
+    const childValue = document.createElement("div");
+    childValue.className = "programmer-output-value";
+    childValue.innerHTML = "0";
+    newChild.appendChild(childValue);
+
+    programmerOutputContainer.appendChild(newChild);
+  }
+};
 
 const resetInputSelector = () => {
   const selected = document.querySelector(".selected");

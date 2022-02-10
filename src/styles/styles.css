@@ -27,7 +27,8 @@ body {
 }
 
 .app-navigation {
-  flex-grow: 0.4;
+  /* flex-grow: 0.4; */
+  flex-basis: 15%;
   /* font-size: 22px; */
   font-size: 1.15vw;
 }
@@ -96,7 +97,8 @@ img {
 }
 
 .main-app {
-  flex-grow: 3;
+  /* flex-grow: 3; */
+  flex-basis: 65%;
   border-left: 1px solid #c4c4c4;
   border-right: 1px solid #c4c4c4;
   /* display: flex;
@@ -117,12 +119,13 @@ img {
 }
 
 .hex-letter-container {
+  /* display: none; */
   display: flex;
   flex-flow: row wrap;
   width: 15vw;
-  height: 38vh;
+  height: 38vh, 400px;
   gap: 1%;
-  justify-content: space-evenly;
+  /* justify-content: space-between; */
   margin-right: 20px;
 }
 
@@ -177,6 +180,7 @@ img {
 .num-container {
   display: flex;
   flex-flow: row wrap;
+  height: 38vh;
   width: 20vw;
   gap: 3%;
 }
@@ -322,7 +326,6 @@ img {
   border-radius: 10px;
   flex-basis: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -447,7 +450,8 @@ label {
 }
 
 .app-config {
-  flex-grow: 0.5;
+  /* flex-grow: 0.5; */
+  flex-basis: 20%;
   display: flex;
   flex-flow: column nowrap;
   font-size: min(1.4vw, 22px);
