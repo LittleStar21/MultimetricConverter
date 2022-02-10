@@ -386,6 +386,8 @@ img {
   font-weight: 600;
   padding-right: 20px;
   align-self: flex-end;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .select-box {
@@ -496,6 +498,8 @@ label {
   font-weight: 600;
   font-size: 2vw;
   float: right;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .border-bot {
@@ -577,4 +581,12 @@ input[type="checkbox"]:before {
 
 input:checked[type="checkbox"]:before {
   left: 30px;
+}
+
+.pop-up {
+  /* visibility: hidden; */
+  font-size: 24px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
 }
