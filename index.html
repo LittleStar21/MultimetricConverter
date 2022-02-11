@@ -16,7 +16,54 @@
     <div class="pop-up">
       <div class="feedback">
         <h1>Feedback</h1>
-        <div class="feedback-vote"></div>
+        <div class="feedback-vote">
+          <div class="required-text">
+            Rate your overall experience with Multimetric Converter
+          </div>
+          <div class="required-vote">
+            <div class="vote-number clicked">1</div>
+            <div class="vote-number">2</div>
+            <div class="vote-number">3</div>
+            <div class="vote-number">4</div>
+            <div class="vote-number">5</div>
+            <div class="vote-number">6</div>
+            <div class="vote-number">7</div>
+            <div class="vote-number">8</div>
+            <div class="vote-number">9</div>
+            <div class="vote-number">10</div>
+          </div>
+        </div>
+        <div class="feedback-vote">
+          <div class="required-text">
+            How likely are you to recommend us to a friend?
+          </div>
+          <div class="required-vote">
+            <div class="vote-number">1</div>
+            <div class="vote-number">2</div>
+            <div class="vote-number clicked">3</div>
+            <div class="vote-number">4</div>
+            <div class="vote-number">5</div>
+            <div class="vote-number">6</div>
+            <div class="vote-number">7</div>
+            <div class="vote-number">8</div>
+            <div class="vote-number">9</div>
+            <div class="vote-number">10</div>
+          </div>
+        </div>
+        <div class="feedback-notes">
+          Leave us additional notes (max. 200 characters)
+          <form onsubmit="submitFeedback();">
+            <textarea
+              id="feedback-message"
+              rows="5"
+              cols="40"
+              placeholder="Your message"
+            ></textarea>
+            <button type="submit" value="Submit" id="feedback-submit">
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
       <div class="help">
         <h1>Help</h1>

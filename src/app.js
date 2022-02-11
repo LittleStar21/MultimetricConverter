@@ -452,3 +452,8 @@ const removePopUp = () => {
   help.style.display = "none";
   feedback.style.display = "none";
 };
+
+const submitFeedback = () => {
+  alert("HAHA");
+  removePopUp();
+};
