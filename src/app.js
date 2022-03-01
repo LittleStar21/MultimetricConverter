@@ -286,6 +286,7 @@ const setNewOutputContainer = (newOutputs) => {
 };
 
 const buttonPressed = (key) => {
+  console.log("BUTTON:", key);
   const inputNumber = document.querySelector(".programmer-input-number");
   let currentInput = inputNumber.innerHTML;
 
